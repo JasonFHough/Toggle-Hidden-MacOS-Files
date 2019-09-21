@@ -3,11 +3,11 @@
 isShown=$(defaults read com.apple.finder AppleShowAllFiles)
 
 if [ $isShown == 'FALSE' ]; then
-	$(defaults write com.apple.finder AppleShowAllFiles TRUE)
+	defaults write com.apple.finder AppleShowAllFiles TRUE
 	echo "Files shown..."
 	killall Finder
 elif [ $isShown == 'TRUE' ]; then
-	$(defaults write com.apple.finder AppleShowAllFiles FALSE)
+	defaults write com.apple.finder AppleShowAllFiles FALSE
 	echo "Files hidden..."
 	killall Finder
 else
